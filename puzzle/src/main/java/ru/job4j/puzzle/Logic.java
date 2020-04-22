@@ -6,9 +6,7 @@ import ru.job4j.puzzle.firuges.Figure;
 import java.util.Arrays;
 
 /**
- * //TODO add comments.
- *
- * @author Petr Arsentev (parsentev@yandex.ru)
+ * @author Enver Eskendarov (envereskendarov@gmail.com)
  * @version $Id$
  * @since 0.1
  */
@@ -68,11 +66,6 @@ public class Logic {
         return rst;
     }
 
-//    public boolean isWin() {
-//        int[][] table = this.convert();
-//        boolean result = false;
-//        return result;
-//    }
     public boolean isWin() {
         int[][] table = this.convert();
         boolean result = false;
