@@ -16,6 +16,9 @@ import javafx.stage.Stage;
 import ru.job4j.chess.firuges.Cell;
 import ru.job4j.chess.firuges.Figure;
 import ru.job4j.chess.firuges.black.*;
+import ru.job4j.chess.firuges.exceptions.FigureNotFoundException;
+import ru.job4j.chess.firuges.exceptions.ImpossibleMoveException;
+import ru.job4j.chess.firuges.exceptions.OccupiedCellException;
 import ru.job4j.chess.firuges.white.*;
 
 public final class Chess extends Application {
@@ -67,9 +70,9 @@ public final class Chess extends Application {
                                 findBy(event.getX(), event.getY()));
                         rect.setX(((int) event.getX() / 40) * 40 + 5);
                         rect.setY(((int) event.getY() / 40) * 40 + 5);
-                    } catch (Exception e) {
+                    } catch (FigureNotFoundException | ImpossibleMoveException | OccupiedCellException e) {
                         Alert info = new Alert(Alert.AlertType.ERROR);
-                        info.setContentText(e.getClass().getName() +  " "  + e.getMessage());
+                        info.setContentText(e.getClass().getName() + System.lineSeparator() + e.getMessage());
                         info.show();
                         rect.setX(((int) momento.getX() / 40) * 40 + 5);
                         rect.setY(((int) momento.getY() / 40) * 40 + 5);
